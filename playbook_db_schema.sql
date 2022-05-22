@@ -1,4 +1,4 @@
-CREATE DATABASE playbook_db
+CREATE DATABASE playbook_db;
 
 CREATE TABLE plays(  
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -11,3 +11,11 @@ CREATE TABLE plays(
   scored BOOLEAN,
   trick_play BOOLEAN
 );
+
+ALTER TABLE plays ADD COLUMN outcome int;
+
+describe plays;
+ALTER TABLE plays rename COLUMN Play_type TO play_book;
+alter table plays modify outcome int after yardage; 
+ALTER TABLE plays rename COLUMN Play_book TO play_type;
+ALTER TABLE plays rename COLUMN yardage TO yards_togo;
